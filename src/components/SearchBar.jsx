@@ -28,6 +28,8 @@ export default function SearchBar({ onSearch, disabled }) {
         placeholder="Search for a city (e.g. Kathmandu, London, Tokyo)"
         aria-label="City name"
         disabled={disabled}
+        autoComplete="off"
+        spellCheck="false"
       />
       <button type="submit" disabled={disabled}>
         {disabled ? 'Searching…' : 'Search'}
