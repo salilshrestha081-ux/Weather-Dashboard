@@ -317,3 +317,36 @@ body {
     font-size: 0.7rem;
   }
 }
+
+/* Interactive dashboard effects */
+.weather-card,
+.forecast-list,
+.search-history {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.weather-card:hover,
+.forecast-list:hover,
+.search-history:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar button,
+.location-btn,
+.unit-toggle,
+.clear-btn {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.search-bar button:hover:not(:disabled),
+.location-btn:hover:not(:disabled),
+.unit-toggle:hover,
+.clear-btn:hover {
+  opacity: 0.85;
+}
+
+.search-bar button:active:not(:disabled),
+.location-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
