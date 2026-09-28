@@ -99,8 +99,9 @@ export default function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Weather data provided by Open-Meteo.com</p>
-      </footer>
+  <p>Weather data provided by Open-Meteo.com</p>
+  <p>Built with React and Vite</p>
+</footer>
     </div>
   )
 }
