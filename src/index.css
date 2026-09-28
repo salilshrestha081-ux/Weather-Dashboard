@@ -350,3 +350,36 @@ body {
 .location-btn:active:not(:disabled) {
   transform: scale(0.98);
 }
+
+
+/* Additional mobile improvements */
+@media (max-width: 600px) {
+  .app {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .search-bar {
+    gap: 8px;
+  }
+
+  .search-bar input {
+    min-width: 0;
+  }
+
+  .weather-card {
+    padding: 16px;
+  }
+
+  .forecast-list {
+    overflow-x: auto;
+  }
+
+  .forecast-grid {
+    min-width: 500px;
+  }
+
+  .search-history {
+    margin-top: 12px;
+  }
+}
