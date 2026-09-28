@@ -28,8 +28,10 @@ export function useWeather() {
         timezone: 'auto',
       })
       const res = await fetch(`${FORECAST_URL}?${params.toString()}`)
-      if (!res.ok) throw new Error('Could not load weather data. Please try again.')
-      const data = await res.json()
+if (!res.ok) {
+  throw new Error('Unable to load weather information. Please try again.')
+}      
+const data = await res.json()
       setWeather(data)
       setLocation(label)
     } catch (err) {
@@ -53,11 +55,13 @@ export function useWeather() {
         const geoRes = await fetch(
           `${GEOCODE_URL}?name=${encodeURIComponent(trimmed)}&count=1&language=en&format=json`
         )
-        if (!geoRes.ok) throw new Error('City lookup failed. Please try again.')
-        const geoData = await geoRes.json()
+if (!geoRes.ok) {
+  throw new Error('Unable to search for the city. Please try again.')
+}          
+const geoData = await geoRes.json()
 
         if (!geoData.results || geoData.results.length === 0) {
-          setError(`No city found matching "${trimmed}".`)
+  setError(`We couldn't find "${trimmed}". Please check the spelling and try again.`)
           setWeather(null)
           setLoading(false)
           return
