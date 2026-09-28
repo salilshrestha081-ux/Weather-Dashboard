@@ -20,7 +20,13 @@ export default function WeatherCard({ location, current, unit, onToggleUnit }) {
     <div className="weather-card">
       <div className="weather-card-header">
         <h2>{location}</h2>
-        <button className="unit-toggle" onClick={onToggleUnit}>
+       <button
+  className="unit-toggle"
+  onClick={onToggleUnit}
+  aria-label={`Switch temperature to ${
+    unit === 'celsius' ? 'Fahrenheit' : 'Celsius'
+  }`}
+>
           °{unit === 'celsius' ? 'C' : 'F'} ⇄ °{unit === 'celsius' ? 'F' : 'C'}
         </button>
       </div>
